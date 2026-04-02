@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+</head>
+
+<body>
+
+<h1>🧠 AI Task Manager</h1>
+<div id="auth">
+  <div class="container">
+    
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+
+    <div class="button-group">
+      <button onclick="signup()">Sign Up</button>
+      <button onclick="login()">Login</button>
+    </div>
+
+  </div>
+</div>
+<div id="popup" class="popup">
+  <p id="popupText"></p>
+</div>
+
+<div id="app" style="display:none;">
+  
+  <div class="container">
+
+    <!-- Input Section -->
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Enter your task..." />
+
+      <select id="priority">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+
+    <!-- Button Section -->
+<div class="button-group">
+  <button onclick="addTask()">➕ Add</button>
+  <button onclick="suggestTask()">✨ Suggest</button>
+  <button onclick="logout()">🚪 Logout</button>
+</div>
+    <!-- Task List -->
+    <ul id="taskList"></ul>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
